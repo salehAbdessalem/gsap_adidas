@@ -2,12 +2,11 @@
 
 :root {
   --background: #000;
+  overflow-x: hidden;
 }
-
 
 body {
   background: var(--background);
-  
 }
 
 @utility hover-animation {
