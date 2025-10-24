@@ -1,9 +1,8 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { MainStudioModel } from "./MainStudioModal";
 import { OrbitControls, View } from "@react-three/drei";
 import Rig from "./Rig";
-import { useEffect, useState } from "react";
 
 const ViewCanvas = () => {
   const [eventSource, setEventSource] = useState<HTMLElement | null>(null);
