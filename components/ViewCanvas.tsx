@@ -18,7 +18,7 @@ const ViewCanvas = () => {
     >
       <View.Port />
       {/* <OrbitControls /> */}
-      <Rig />
+      {/* <Rig /> */}
     </Canvas>
   );
 };

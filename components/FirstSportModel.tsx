@@ -1,8 +1,8 @@
-import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
-import { useShirtSectionTextures } from "@/lib/useTextures";
-import { createMaterials } from "@/lib/material";
-import { TextureKey } from "@/lib/textures";
+import * as THREE from 'three'
+import { useGLTF } from '@react-three/drei'
+import { useShirtSectionTextures } from '@/lib/useTextures';
+import { createMaterials } from '@/lib/material';
+import { TextureKey } from '@/lib/textures';
 
 type GLTFResult = {
   nodes: {
@@ -11,15 +11,13 @@ type GLTFResult = {
 };
 
 export function FirstSportModel() {
-  const { nodes } = useGLTF(
-    "/models/sport/SportStudio.glb"
-  ) as unknown as GLTFResult;
+  const { nodes } = useGLTF('/models/sport/SportStudio.glb') as unknown as GLTFResult;
 
   const textures = useShirtSectionTextures("sport", "first");
-  const mats = createMaterials(textures) as Record<
-    TextureKey<"sport", "first">,
-    THREE.MeshBasicMaterial
-  >;
+      const mats = createMaterials(textures) as Record<
+        TextureKey<"sport", "first">,
+        THREE.MeshBasicMaterial
+      >;
   return (
     <group dispose={null}>
       <mesh
@@ -28,15 +26,21 @@ export function FirstSportModel() {
         position={[0, 0.7, 0]}
         rotation={[Math.PI, 0, Math.PI]}
       />
-      <mesh geometry={nodes.Environment.geometry} material={mats.env} />
-      <mesh geometry={nodes.Ramp.geometry} material={mats.ramp} />
+      <mesh
+        geometry={nodes.Environment.geometry}
+        material={mats.env}
+      />
+      <mesh
+        geometry={nodes.Ramp.geometry}
+        material={mats.ramp}
+      />
       <mesh
         geometry={nodes.SakteBoard.geometry}
         material={mats.skateboard}
         position={[0, -0.012, 0]}
       />
     </group>
-  );
+  )
 }
 
-useGLTF.preload("/models/sport/SportStudio.glb");
+useGLTF.preload('/models/sport/SportStudio.glb')

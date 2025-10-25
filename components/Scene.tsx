@@ -4,6 +4,7 @@ import React from "react";
 import { FirstWhiteModel } from "./FirstWhiteModel";
 import { FirstGrayModel } from "./FirstGrayModel";
 import { FirstSportModel } from "./FirstSportModel";
+import { SecondModel } from "./SecondModel";
 type Props = {
   shirtType: ShirtType;
 };
@@ -19,13 +20,13 @@ function Scene({ shirtType }: Props) {
         </View>
       </section>
 
-      {/* <section id="second-section" className='h-screen'>
+      <section id="second-section" className='h-screen'>
             <View className='w-dvw h-dvh'>
-
+                <SecondModel shirtType={shirtType} />
             </View>
         </section>
 
-        <section id="third-section" className='h-screen'>
+        {/* <section id="third-section" className='h-screen'>
             <View className='w-dvw h-dvh'>
 
             </View>
