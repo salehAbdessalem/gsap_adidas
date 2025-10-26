@@ -7,8 +7,8 @@ import Rig from "./Rig";
 const ViewCanvas = () => {
   const [eventSource, setEventSource] = useState<HTMLElement | null>(null);
   useEffect(() => {
-    setEventSource(document.body)
-  }, [])
+    setEventSource(document.body);
+  }, []);
   return (
     <Canvas
       style={{ position: "fixed", inset: 0, overflow: "hidden" }}
@@ -18,7 +18,7 @@ const ViewCanvas = () => {
     >
       <View.Port />
       {/* <OrbitControls /> */}
-      {/* <Rig /> */}
+      <Rig />
     </Canvas>
   );
 };

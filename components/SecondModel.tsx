@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { shirtColors } from "@/lib/colors";
+import { useMediaQuery } from "react-responsive";
 
 type GLTFResult = {
   nodes: {
@@ -19,6 +20,8 @@ export function SecondModel({ shirtType }: { shirtType: ShirtType }) {
   const { nodes } = useGLTF(
     "/models/ShirtScrolling.glb"
   ) as unknown as GLTFResult;
+
+  const isMobile = useMediaQuery({ maxWidth: 768 })
 
   const textures = useShirtSectionTextures(shirtType, "second");
   const mats = createMaterials(textures) as Record<
@@ -84,7 +87,7 @@ export function SecondModel({ shirtType }: { shirtType: ShirtType }) {
     });
   }, []);
   return (
-    <group dispose={null}>
+    <group dispose={null} scale={isMobile ? 1.5 : 2.2}>
       <mesh geometry={nodes.Shirt.geometry} material={mats.shirt} />
       <mesh geometry={nodes.Sphere_ENV.geometry} material={mats.sphere} />
 
