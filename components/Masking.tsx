@@ -1,0 +1,16 @@
+import * as Three from "three";
+import { Mask, useMask } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
+import React, { RefObject } from "react";
+
+const Masking = ({ref}: {ref: RefObject<Three.Mesh | null>}) => {
+  const { width, height } = useThree((state) => state.viewport);
+  return (
+    <Mask ref={ref} id={1} position={[0, 0.7, 0]}>
+      <planeGeometry args={[width * 2, height]} />
+      <meshBasicMaterial />
+    </Mask>
+  );
+};
+
+export default Masking;
