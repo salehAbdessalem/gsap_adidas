@@ -31,11 +31,11 @@ function Scene({ shirtType }: Props) {
             </View>
         </section>
 
-        <section id="third-section" className='h-screen'>
+        {/* <section id="third-section" className='h-screen'>
             <View className='w-dvw h-dvh'>
                <ThirdModel shirtType={shirtType} />
             </View>
-        </section>
+        </section> */}
     </main>
   );
 }
