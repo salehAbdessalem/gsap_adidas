@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import ViewCanvas from "@/components/ViewCanvas";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const mulish = Mulish({
   subsets: ["cyrillic"],
@@ -9,7 +11,8 @@ const mulish = Mulish({
 
 export const metadata: Metadata = {
   title: "Adidas",
-  description: "Foot locker and adidas Originals' latest collection breaks new ground.",
+  description:
+    "Foot locker and adidas Originals' latest collection breaks new ground.",
 };
 
 export default function RootLayout({
@@ -21,7 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${mulish.className} antialiased`}>
         <ViewCanvas />
-        {children}</body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

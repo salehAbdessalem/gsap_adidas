@@ -1,17 +1,19 @@
 "use client";
-import { notFound, useParams } from 'next/navigation';
-import Scene from '@/components/Scene';
-import { ShirtType } from '@/lib/textures';
+import { notFound, useParams } from "next/navigation";
+import Scene from "@/components/Scene";
+import { ShirtType } from "@/lib/textures";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const page = () => {
-    const params = useParams();
-    const shirtType = params?.slug as ShirtType;
-    if (!shirtType) return notFound()
+  const params = useParams();
+  const shirtType = params?.slug as ShirtType;
+  if (!shirtType) return notFound();
   return (
     <>
-        <Scene shirtType={shirtType} /> 
+      <Scene shirtType={shirtType} />
+      <ScrollIndicator shirtType={shirtType} />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
