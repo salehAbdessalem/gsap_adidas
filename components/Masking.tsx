@@ -1,5 +1,5 @@
 import * as Three from "three";
-import { Mask, useMask } from "@react-three/drei";
+import { Mask } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import React, { RefObject } from "react";
 

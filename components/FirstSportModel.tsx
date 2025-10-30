@@ -1,9 +1,8 @@
 import * as THREE from "three";
-import { Mask, useGLTF, useMask } from "@react-three/drei";
+import { useGLTF, useMask } from "@react-three/drei";
 import { useShirtSectionTextures } from "@/lib/useTextures";
 import { createMaterials } from "@/lib/material";
 import { TextureKey } from "@/lib/textures";
-import { useThree } from "@react-three/fiber";
 import Masking from "./Masking";
 import useFirstAnimation from "@/lib/useFirstAnimation";
 import { useRef } from "react";
@@ -54,4 +53,3 @@ export function FirstSportModel() {
   );
 }
 
-useGLTF.preload("/models/sport/SportStudio.glb");

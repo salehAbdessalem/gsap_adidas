@@ -1,6 +1,5 @@
 import * as THREE from "three";
 
-import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 type GLTFResult = {

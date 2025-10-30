@@ -1,11 +1,11 @@
 "use client";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Cube from "./Cube";
 const Test = () => {
   return (
     <Canvas style={{ position: "fixed" }}>
-      <Environment preset="studio" />
+      {/* <Environment preset="studio" /> */}
       <OrbitControls />
       <mesh position={[-1, 0, 0]}>
         {/* geometry */}
